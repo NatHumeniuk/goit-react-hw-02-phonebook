@@ -19,7 +19,7 @@ export class App extends Component {
 
   handleAddContact = formData => {
     const hasDuplicates = this.state.contacts.some(
-      contact => contact.name === formData.name
+      contact => contact.name.toLowerCase() === formData.name.toLowerCase()
     );
     if (hasDuplicates) {
       alert(`${formData.name} is already in contacts!`);
